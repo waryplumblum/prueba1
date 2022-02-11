@@ -14,71 +14,75 @@
       </p>
 
 
-      <div class="vehículos" style="display: flex;">
-        <table class="izquierda" style="margin: auto;">
-          <tr style="text-align: center;">VEHÍCULO 1</tr>
-          <tr>
-            <td>Marca:<input size="31"></td>
-          </tr>
-          <tr>
-            <td>Modelo:<input size="30"></td>
-          </tr>
-          <tr>
-            <td>Placas:<input size="31"></td>
-          </tr>
-          <tr>
-            <td>Color: <input size="32"></td>
-          </tr>
-          <tr>
-            <td>No. de calcomanía:<input type="number"></td>
-          </tr>
-        </table>
-        <table class="derecha" style="margin: auto;">
-          <tr style="text-align: center;;">VEHÍCULO 2</tr>
-          <tr>
-            <td>Marca:<input size="31"></td>
-          </tr>
-          <tr>
-            <td>Modelo:<input size="30"></td>
-          </tr>
-          <tr>
-            <td>Placas:<input size="31"></td>
-          </tr>
-          <tr>
-            <td>Color: <input size="32"></td>
-          </tr>
-          <tr>
-            <td>No. de calcomanía:<input type="number"></td>
-          </tr>
-        </table>
+      <div class="vehículos" style="display:inline-table;padding-left: 10rem;">
+        <div>
+          <table class="izquierda" style="margin: auto;">
+            <tr style="text-align: center;">VEHÍCULO 1</tr>
+            <tr>
+              <td>Marca:<input size="31"></td>
+            </tr>
+            <tr>
+              <td>Modelo:<input size="30"></td>
+            </tr>
+            <tr>
+              <td>Placas:<input size="31"></td>
+            </tr>
+            <tr>
+              <td>Color: <input size="32"></td>
+            </tr>
+            <tr>
+              <td>No. de calcomanía:<input type="number"></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table class="derecha" style="margin: auto;">
+            <tr style="text-align: center;;">VEHÍCULO 2</tr>
+            <tr>
+              <td>Marca:<input size="31"></td>
+            </tr>
+            <tr>
+              <td>Modelo:<input size="30"></td>
+            </tr>
+            <tr>
+              <td>Placas:<input size="31"></td>
+            </tr>
+            <tr>
+              <td>Color: <input size="32"></td>
+            </tr>
+            <tr>
+              <td>No. de calcomanía:<input type="number"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="datosextra" style="padding-top: 1rem;">
+          <table class="abajo" style="margin:auto;">
+            <tr>
+              <td>Solicitante:<input size="59" placeholder="Nombre completo"></td>
+            </tr>
+            <tr>
+              <td>Dirección:<input size="60"></td>
+            </tr>
+            <tr>
+              <td>Teléfono:<input type="tel" maxlength="10" size="21"></td>
+            </tr>
+            <tr>
+              <td>Celular: <input type="tel" maxlength="10" size="22"></td>
+            </tr>
+          </table>
+        </div>
       </div>
+
       <br>
-      <div class="datosextra" style="display: flex;">
-        <table class="abajo" style="margin: auto;">
-          <tr>
-            <td>Solicitante:<input size="59" placeholder="Nombre completo"></td>
-          </tr>
-          <tr>
-            <td>Dirección:<input size="60"></td>
-          </tr>
-          <tr>
-            <td>Teléfono:<input type="tel" maxlength="10" size="21"></td>
-          </tr>
-          <tr>
-            <td>Celular: <input type="tel" maxlength="10" size="22"></td>
-          </tr>
-        </table>
+      <div style="display: flex;padding-top: 1rem;">
+        <h3 style="padding-left: 20rem;">ATENTAMENTE</h3>
       </div>
       <br>
       <div style="display: flex;">
-        <h3 style="margin: auto;">ATENTAMENTE</h3>
-      </div>
-      <br>
-      <div style="display: flex;">
-        <p style="margin: auto;">_______________________________________________</p>
+        <p style="padding-left: 14rem;">_______________________________________________</p>
       </div>
       <div style="display: flex;">
-        <p style="margin: auto;">Nombre y firma</p>
+        <p style="padding-left: 20rem;">Nombre y firma</p>
       </div>
 
       <h3>ESPECIFIQUE:</h3>
@@ -99,7 +103,7 @@
                    padding: 15px 32px;
                    text-align: center;
                    font-size: 16px;" class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">
-      Download PDF
+      Descargar PDF
     </button>
   </div>
 </div>
