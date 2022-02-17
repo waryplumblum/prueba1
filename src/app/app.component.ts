@@ -1,4 +1,5 @@
 import { Component,Input } from '@angular/core';
+
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas'; // Todavía no lo usamos
 
@@ -13,6 +14,18 @@ export class AppComponent {
   @Input('entrada') entrada = "default";
   
   title = 'prueba1';
+
+  //Arreglo para desplegar una tabla
+  personas:any[]=[];
+  //Input del formulario se asocian con un modelo
+  persona:any={};
+
+  guardar(){
+    //Insertar dato en el arreglo
+    this.personas.push(this.persona);
+    //Se crea un nuevo objeto para almacenar nuevos datos
+    this.persona={};
+  }
 
    
   // tslint:disable-next-line:typedef
@@ -38,5 +51,7 @@ export class AppComponent {
       docResult.save(`${new Date().toDateString()}.pdf`);
     }); 
   }
+
+  
   
 }

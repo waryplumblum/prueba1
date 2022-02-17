@@ -1,9 +1,24 @@
+<script>
+  function imprim1(htmlData) {
+    var contenido = document.getElementById(htmlData).innerHTML;
+    var contenidoOriginal = document.body.innerHTML;
+
+    document.body.innerHTML = contenido;
+
+    window.print();
+
+    document.body.innerHTML = contenidoOriginal;
+  }
+
+</script>
+
+
 <div class="container" style="background-color:beige; padding-left: 5rem;">
   <div class="row">
     <div id="htmlData">
 
       <br>
-      <h2>TEPIC, NAYARIT., A <input type="datetime-local"></h2>
+      <h2 style="padding-top: 50p;">TEPIC, NAYARIT., A <input type="datetime-local"></h2>
       <br>
       <h2>M.A MANUEL ANGEL URIBE VAZQUEZ</h2>
       <h2>DIRECTOR DEL I.T. DE TEPIC</h2>
@@ -56,20 +71,11 @@
           </table>
         </div>
         <div class="datosextra" style="padding-top: 1rem;">
-          <table class="abajo" style="margin:auto;">
-            <tr>
-              <td>Solicitante:<input size="59" placeholder="Nombre completo"></td>
-            </tr>
-            <tr>
-              <td>Dirección:<input size="60"></td>
-            </tr>
-            <tr>
-              <td>Teléfono:<input type="tel" maxlength="10" size="21"></td>
-            </tr>
-            <tr>
-              <td>Celular: <input type="tel" maxlength="10" size="22"></td>
-            </tr>
-          </table>
+          Solicitante:<input type="text" name="nombre" size="59" placeholder="Nombre completo"
+            [(ngModel)]="persona.nombre" /><br>
+          Dirección:<input size="60" name="direccion" [(ngModel)]="persona.direccion"><br>
+          Teléfono:<input type="tel" maxlength="10" size="21" name="telefono" [(ngModel)]="persona.telefono"><br>
+          Celular: <input type="tel" maxlength="10" size="22"><br>
         </div>
       </div>
 
@@ -97,13 +103,42 @@
       <label>Área: <input size="56"></label><br>
     </div>
   </div>
-  <div style="padding-bottom: 1rem;padding-top: 1rem;">
-    <button style="background-color: #4CAF50;
-                   color: white;
-                   padding: 15px 32px;
-                   text-align: center;
-                   font-size: 16px;" class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">
-      Descargar PDF
-    </button>
+
+  <div class="esconder1" style="display:inline-table;padding-left: 10rem;padding-top: 1rem;">
+    <table border="1">
+      <tr>
+        <td style="text-align: center;">Nombre</td>
+        <td style="text-align: center;">Dirección</td>
+        <td style="text-align: center;">Teléfono</td>
+        <td style="text-align: center;">Opciones</td>
+      </tr>
+      <tr *ngFor="let persona of personas">
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.direccion}}</td>
+        <td>{{persona.telefono}}</td>
+        <td style="padding: 5px;">
+          <button style="background-color: #89d027;
+                           color: white;
+                           padding: 5px 10px;
+                           text-align: center;
+                           font-size: 16px;" type="button" onclick="javascript:window.print()">
+            Imprimir
+          </button>
+          <button style="background-color: #3c7e75;
+                          color: white;
+                          padding: 5px 10px;
+                          text-align: center;
+                          font-size: 16px; " class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">
+            Descargar PDF
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="esconder2" style="padding-left: 40rem; padding-bottom: 1rem;padding-top: 1rem;">
+
+    <input style="background-color: #4CAF50;color: white;padding: 15px 32px;text-align: center;font-size: 16px;"
+      type="button" value="Guardar" (click)="guardar()" />
   </div>
 </div>

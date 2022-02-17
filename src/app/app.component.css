@@ -1,0 +1,5 @@
+@media print{
+    div.esconder2,div.esconder1{
+        display: none;
+    }
+}
