@@ -1,5 +1,4 @@
 import { Component,Input } from '@angular/core';
-
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas'; // Todavía no lo usamos
 
@@ -27,6 +26,20 @@ export class AppComponent {
     this.persona={};
   }
 
+  //INTENTOS DE IMPRIMIR MEDIANTE IMAGEN
+
+  imgcreada = false;
+  imagenCreada!: string;
+  constructor(){}
+
+  crearImagen(){
+    html2canvas(document.querySelector("#htmlData")!).then(canvas => {
+     this.imagenCreada = canvas.toDataURL();
+    });
+    this.imgcreada = true;
+  }
+
+  //////////////////////////////////////
    
   // tslint:disable-next-line:typedef
   downloadPDF() {

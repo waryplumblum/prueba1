@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyCHRXq_9QcwT-vZM5yghkVXH__qznn9K9Y",
-    authDomain: "calcomanias-4e024.firebaseapp.com",
-    projectId: "calcomanias-4e024",
-    storageBucket: "calcomanias-4e024.appspot.com",
-    messagingSenderId: "589848736660",
-    appId: "1:589848736660:web:29d8c0a55cbfda8a481581",
-    measurementId: "G-2EN0V0LQZX"
+    apiKey: "AIzaSyAgjrAFuFrkIfrglQJlN85kxWfxlUV-syI",
+    authDomain: "calcas1.firebaseapp.com",
+    projectId: "calcas1",
+    storageBucket: "calcas1.appspot.com",
+    messagingSenderId: "18646939272",
+    appId: "1:18646939272:web:58bcde3b371ba2db94513d",
+    measurementId: "G-TRXXKEXPXF"
   }
 };
 

@@ -1,144 +1,169 @@
-<script>
-  function imprim1(htmlData) {
-    var contenido = document.getElementById(htmlData).innerHTML;
-    var contenidoOriginal = document.body.innerHTML;
+<head>
+  <script>
+    function impression() {
+        no_print.style.visibility = 'hidden';  
+        window.print();    
+        no_print.style.visibility = 'visible';
+        }
+    </script>
+</head>
 
-    document.body.innerHTML = contenido;
+  <div class="container" style="background-color:beige; padding-left: 5rem;">
+    <div class="row">
+      <div id="htmlData">
 
-    window.print();
+        <div id="no_print">
+          <img src="{{imagenCreada}}" name="image" alt="image" title="imagen imprimible" style="visibility:visible;">
+          <a href="javascript:impression();">Boton de Impresion</a>
+          El texto que aqui se encuentra no será imprimido
+          </div>
 
-    document.body.innerHTML = contenidoOriginal;
-  }
-
-</script>
-
-
-<div class="container" style="background-color:beige; padding-left: 5rem;">
-  <div class="row">
-    <div id="htmlData">
-
-      <br>
-      <h2 style="padding-top: 50p;">TEPIC, NAYARIT., A <input type="datetime-local"></h2>
-      <br>
-      <h2>M.A MANUEL ANGEL URIBE VAZQUEZ</h2>
-      <h2>DIRECTOR DEL I.T. DE TEPIC</h2>
-      <h2>PRESENTE:</h2>
-      <br>
-      <p>Me permito solicitarle <input type="number"> calcomanía(s) para mi(s)
-        vehículo(s) y poder acceder a las instalaciones del Instituto.
-      </p>
+        <br>
+        <h2 style="padding-top: 50p;">TEPIC, NAYARIT., A <input type="datetime-local"></h2>
+        <br>
+        <h2>M.A MANUEL ANGEL URIBE VAZQUEZ</h2>
+        <h2>DIRECTOR DEL I.T. DE TEPIC</h2>
+        <h2>PRESENTE:</h2>
+        <br>
+        <p>Me permito solicitarle <input type="number"> calcomanía(s) para mi(s)
+          vehículo(s) y poder acceder a las instalaciones del Instituto.
+        </p>
 
 
-      <div class="vehículos" style="display:inline-table;padding-left: 10rem;">
-        <div>
-          <table class="izquierda" style="margin: auto;">
-            <tr style="text-align: center;">VEHÍCULO 1</tr>
-            <tr>
-              <td>Marca:<input size="31"></td>
-            </tr>
-            <tr>
-              <td>Modelo:<input size="30"></td>
-            </tr>
-            <tr>
-              <td>Placas:<input size="31"></td>
-            </tr>
-            <tr>
-              <td>Color: <input size="32"></td>
-            </tr>
-            <tr>
-              <td>No. de calcomanía:<input type="number"></td>
-            </tr>
-          </table>
+        <div class="vehículos" style="display:inline-table;padding-left: 10rem;">
+          <div>
+            <table class="izquierda" style="margin: auto;">
+              <tr style="text-align: center;">VEHÍCULO 1</tr>
+              <tr>
+                <td>Marca:<input size="31"></td>
+              </tr>
+              <tr>
+                <td>Modelo:<input size="30"></td>
+              </tr>
+              <tr>
+                <td>Placas:<input size="31"></td>
+              </tr>
+              <tr>
+                <td>Color: <input size="32"></td>
+              </tr>
+              <tr>
+                <td>No. de calcomanía:<input type="number"></td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table class="derecha" style="margin: auto;">
+              <tr style="text-align: center;;">VEHÍCULO 2</tr>
+              <tr>
+                <td>Marca:<input size="31"></td>
+              </tr>
+              <tr>
+                <td>Modelo:<input size="30"></td>
+              </tr>
+              <tr>
+                <td>Placas:<input size="31"></td>
+              </tr>
+              <tr>
+                <td>Color: <input size="32"></td>
+              </tr>
+              <tr>
+                <td>No. de calcomanía:<input type="number"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="datosextra" style="padding-top: 1rem;">
+            Solicitante:<input type="text" name="nombre" size="59" placeholder="Nombre completo"
+              [(ngModel)]="persona.nombre" /><br>
+            Dirección:<input size="60" name="direccion" [(ngModel)]="persona.direccion"><br>
+            Teléfono:<input type="tel" maxlength="10" size="21" name="telefono" [(ngModel)]="persona.telefono"><br>
+            Celular: <input type="tel" maxlength="10" size="22"><br>
+          </div>
         </div>
-        <div>
-          <table class="derecha" style="margin: auto;">
-            <tr style="text-align: center;;">VEHÍCULO 2</tr>
-            <tr>
-              <td>Marca:<input size="31"></td>
-            </tr>
-            <tr>
-              <td>Modelo:<input size="30"></td>
-            </tr>
-            <tr>
-              <td>Placas:<input size="31"></td>
-            </tr>
-            <tr>
-              <td>Color: <input size="32"></td>
-            </tr>
-            <tr>
-              <td>No. de calcomanía:<input type="number"></td>
-            </tr>
-          </table>
-        </div>
-        <div class="datosextra" style="padding-top: 1rem;">
-          Solicitante:<input type="text" name="nombre" size="59" placeholder="Nombre completo"
-            [(ngModel)]="persona.nombre" /><br>
-          Dirección:<input size="60" name="direccion" [(ngModel)]="persona.direccion"><br>
-          Teléfono:<input type="tel" maxlength="10" size="21" name="telefono" [(ngModel)]="persona.telefono"><br>
-          Celular: <input type="tel" maxlength="10" size="22"><br>
-        </div>
-      </div>
 
-      <br>
-      <div style="display: flex;padding-top: 1rem;">
-        <h3 style="padding-left: 20rem;">ATENTAMENTE</h3>
-      </div>
-      <br>
-      <div style="display: flex;">
-        <p style="padding-left: 14rem;">_______________________________________________</p>
-      </div>
-      <div style="display: flex;">
-        <p style="padding-left: 20rem;">Nombre y firma</p>
-      </div>
+        <br>
+        <div style="display: flex;padding-top: 1rem;">
+          <h3 style="padding-left: 20rem;">ATENTAMENTE</h3>
+        </div>
+        <br>
+        <div style="display: flex;">
+          <p style="padding-left: 14rem;">_______________________________________________</p>
+        </div>
+        <div style="display: flex;">
+          <p style="padding-left: 20rem;">Nombre y firma</p>
+        </div>
 
-      <h3>ESPECIFIQUE:</h3>
-      <input type="radio" name="rol" id="Trabajador">
-      <label for="Trabajador">Trabajador del Instituto.</label>
-      <label> Departamento: <input size="45"></label><br>
-      <input type="radio" name="rol" id="Estudiante">
-      <label for="Estudiante">Estudiante. </label>
-      <label>No. Control: <input> Carrera: <input size="26"></label><br>
-      <input type="radio" name="rol" id="Prestador">
-      <label for="Prestador">Prestador de servicio. </label>
-      <label>Área: <input size="56"></label><br>
+        <h3>ESPECIFIQUE:</h3>
+        <input type="radio" name="rol" id="Trabajador">
+        <label for="Trabajador">Trabajador del Instituto.</label>
+        <label> Departamento: <input size="45"></label><br>
+        <input type="radio" name="rol" id="Estudiante">
+        <label for="Estudiante">Estudiante. </label>
+        <label>No. Control: <input> Carrera: <input size="26"></label><br>
+        <input type="radio" name="rol" id="Prestador">
+        <label for="Prestador">Prestador de servicio. </label>
+        <label>Área: <input size="56"></label><br>
+      </div>
     </div>
-  </div>
 
-  <div class="esconder1" style="display:inline-table;padding-left: 10rem;padding-top: 1rem;">
-    <table border="1">
-      <tr>
-        <td style="text-align: center;">Nombre</td>
-        <td style="text-align: center;">Dirección</td>
-        <td style="text-align: center;">Teléfono</td>
-        <td style="text-align: center;">Opciones</td>
-      </tr>
-      <tr *ngFor="let persona of personas">
-        <td>{{persona.nombre}}</td>
-        <td>{{persona.direccion}}</td>
-        <td>{{persona.telefono}}</td>
-        <td style="padding: 5px;">
-          <button style="background-color: #89d027;
+    <div class="esconder1" style="display:inline-table;padding-left: 10rem;padding-top: 1rem;">
+      <table border="1">
+        <tr>
+          <td style="text-align: center;">Nombre</td>
+          <td style="text-align: center;">Dirección</td>
+          <td style="text-align: center;">Teléfono</td>
+          <td style="text-align: center;">Opciones</td>
+        </tr>
+        <tr *ngFor="let persona of personas">
+          <td>{{persona.nombre}}</td>
+          <td>{{persona.direccion}}</td>
+          <td>{{persona.telefono}}</td>
+          <td style="padding: 5px;">
+            <button style="background-color: #89d027;
                            color: white;
                            padding: 5px 10px;
                            text-align: center;
                            font-size: 16px;" type="button" onclick="javascript:window.print()">
-            Imprimir
-          </button>
-          <button style="background-color: #3c7e75;
+              Imprimir
+            </button>
+            <button style="background-color: #3c7e75;
                           color: white;
                           padding: 5px 10px;
                           text-align: center;
-                          font-size: 16px; " class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">
-            Descargar PDF
-          </button>
-        </td>
-      </tr>
-    </table>
-  </div>
+                          font-size: 16px; " class="btn col col-lg-4 btn-danger btn-block ml-4"
+              (click)="downloadPDF()">
+              Descargar PDF
+            </button>
+            <button style="background-color: #3c7e75;
+                          color: white;
+                          padding: 5px 10px;
+                          text-align: center;
+                          font-size: 16px; " class="btn btn-primary mt-3 mb-5" (click)="crearImagen()">Crear
+              Imagen</button>
 
-  <div class="esconder2" style="padding-left: 40rem; padding-bottom: 1rem;padding-top: 1rem;">
+          </td>
+        </tr>
+      </table>
+    </div>
 
-    <input style="background-color: #4CAF50;color: white;padding: 15px 32px;text-align: center;font-size: 16px;"
-      type="button" value="Guardar" (click)="guardar()" />
+    <div class="esconder2" style="padding-left: 40rem; padding-bottom: 1rem;padding-top: 1rem;">
+
+      <input style="background-color: #4CAF50;color: white;padding: 15px 32px;text-align: center;font-size: 16px;"
+        type="button" value="Guardar" (click)="guardar()" />
+    </div>
+
+    <ng-container *ngIf="imgcreada === true;">
+      <div align="center">
+        <div id="imprimirIMG">
+          <!-- Imagen Creada -->
+          <h4>Imagen Creada:</h4>
+          <img src={{imagenCreada}}>
+        </div>
+        <!-- Botón para descargar la imagen creada -->
+        <a type="button" class="btn btn-success mt-3" href="{{imagenCreada}}" download>
+          Descargar
+        </a>
+
+      </div>
+    </ng-container>
+
   </div>
-</div>
